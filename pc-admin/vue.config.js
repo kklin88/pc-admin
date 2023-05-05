@@ -5,8 +5,8 @@ module.exports = defineConfig({
     proxy: "http://localhost:3002",
   },
 
-  
-  // publicPath: process.env.NODE_ENV === 'production'
-  //   ? '/pc-admin/'
-  //   : '/'
+
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/pc-admin/'
+    : '/'
 });
