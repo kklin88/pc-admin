@@ -17,19 +17,19 @@ router.get("/api/getPicList", async (ctx) => {
       msg: "成功",
     };
   });
-// app.use(async (ctx, next) => {
-//   ctx.set("Access-Control-Allow-Origin", "http://localhost:8082"); // 添加前端的域名
-//   ctx.set(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, Content-Length, Authorization, Accept, X-Requested-With"
-//   );
-//   ctx.set("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
-//   if (ctx.method === "OPTIONS") {
-//     ctx.body = 200;
-//   } else {
-//     await next();
-//   }
-// });
+app.use(async (ctx, next) => {
+  ctx.set("Access-Control-Allow-Origin", "http://pc.linkui.top"); // 添加前端的域名
+  ctx.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Content-Length, Authorization, Accept, X-Requested-With"
+  );
+  ctx.set("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
+  if (ctx.method === "OPTIONS") {
+    ctx.body = 200;
+  } else {
+    await next();
+  }
+});
 
 // 启动路由
 app.use(router.routes());
